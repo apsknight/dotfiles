@@ -124,6 +124,15 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
+# Source all files from .config/env directory
+if [ -d "$HOME/.config/env" ]; then
+  for file in "$HOME/.config/env"/*; do
+    if [ -f "$file" ]; then
+      source "$file"
+    fi
+  done
+fi
+
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm

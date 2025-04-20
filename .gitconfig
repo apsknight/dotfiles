@@ -1,2 +1,5 @@
 [core]
 	excludesfile = /Users/apsknight/.gitignore_global
+[user]
+	name = apsknight
+	email = amanprtpsingh@gmail.com
